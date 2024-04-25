@@ -1,0 +1,23 @@
+{
+  "name": "websocket-hello-world",
+  "version": "1.0.0",
+  "description": "HelloWorld Websocket Server",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexo-bunnyshell/websocket-hello-world.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexo-bunnyshell/websocket-hello-world/issues"
+  },
+  "homepage": "https://github.com/alexo-bunnyshell/websocket-hello-world#readme",
+  "dependencies": {
+    "ws": "^8.16.0"
+  }
+}
