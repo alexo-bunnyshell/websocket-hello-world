@@ -1,0 +1,32 @@
+kind: Environment
+name: socketserver-demo
+type: primary
+components:
+    -
+        kind: Application
+        name: app
+        # update the gitRepo with your own repository URL
+        gitRepo: 'https://github.com/alexo-bunnyshell/websocket-hello-world.git'
+        gitBranch: main
+        gitApplicationPath: /
+        dockerCompose:
+            build:
+                context: .
+                dockerfile: Dockerfile
+                target: final
+            command:
+                - yarn
+                - serve
+            network_mode: host
+            ports:
+                - '8080:8080'
+                - '8081:8081'
+        hosts:
+            -
+                hostname: 'app-{{ env.base_domain }}'
+                path: /
+                servicePort: 8080
+            -
+                hostname: 'ws-{{ env.base_domain }}'
+                path: /
+                servicePort: 8081
